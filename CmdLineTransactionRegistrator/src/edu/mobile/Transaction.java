@@ -4,21 +4,52 @@ public class Transaction
 {
     Contractor contractorA;// seller
     Contractor contractorB;// buyer
-    String status;// -1 - on creation, 0 - negotiation, 1 - in progress, 2 - completed
+    public static final int UNCONFIRMED = -1;
+    public static final int ON_NEGOTIATION = 0;
+
+    public enum Status
+    {
+        UNCONFIRMED,
+        ON_NEGOTIATION,
+        IN_PROGRESS,
+        COMPLETED,
+    }
+    Status status;// -1 - on creation, 0 - negotiation, 1 - in progress, 2 - completed
     long order_quantity;
 
-    //TODO: write constructor with 2 params (contractors)
-    public Transaction(Contractor seller, Contractor buyer)
+    //TODO_done1: write constructor with 2 params (contractors)
+    public Transaction(Contractor provider, Contractor customer)
     {
-        this.contractorA = seller;
-        this.contractorB = buyer;
+        contractorA = provider;
+        contractorB = customer;
+        if (checkValidity())
+        {
+            status = Status.ON_NEGOTIATION;
+            provider.setInTransaction(true);
+            customer.setInTransaction(true);
+        }
+        else
+        {
+            status = Status.UNCONFIRMED;
+        }
     }
-    public void checkValidity()
+
+    public Transaction(Contractor provider, Contractor customer, Status status)
     {
-        //TODO: check if contractor "industry" is the same
-        //TODO: check if provider has enough goods to sell
+        contractorA = provider;
+        contractorB = customer;
+        provider.setInTransaction(true);
+        customer.setInTransaction(true);
+        this.status = status;
+    }
+    private boolean checkValidity()
+    {
+        return contractorA.getIndustry().equalsIgnoreCase(contractorB.getIndustry());
+        /* MY SOLUTION FOR TODO_done1
+        //TODO_done1: check if contractor "industry" is the same
+        //TODO_done1: check if provider has enough goods to sell
         //if ok: then set status to 0
-        if (contractorA.industry == contractorB.industry)
+        if (contractorA.industry.equalsIgnoreCase(contractorB.industry))
         {
             if (order_quantity < contractorA.inStoreAmount)
             {
@@ -29,22 +60,28 @@ public class Transaction
             {
                 System.out.println("There is not enough goods to complete transaction.");
             }
+            return contractorA.industry.equalsIgnoreCase(contractorB.industry);
         }
         else
         {
             System.out.println("Contractors have different industries.");
+            return false;
         }
+         */
     }
     public void initTransaction()
     {
         //set status to 1 and print to cmd
-        status = "In progress";
-        System.out.println(status);
+        status = Status.IN_PROGRESS;
+        //System.out.println(status);
     }
     public void completeTransaction()
     {
         // set status to 2 and print to cmd
-        status = "Completed";
-        System.out.println(status);
+        status = Status.COMPLETED;
+        //System.out.println(status);
     }
+
+    //TODO: set quantity of goods in transaction
+
 }

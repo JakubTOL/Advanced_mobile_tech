@@ -1,29 +1,108 @@
 package edu.mobile;
 
-public class Contractor
+public abstract class Contractor
 {
-    String name;
-    static int id = 0;
-    String industry;
-    int contractorType; //0-buyer, 1-provider
-    int contractorId;
-    int inStoreAmount;
+    public String getName() {
+        return name;
+    }
 
-    public Contractor(String name, String industry, int contractorType)
+    public void setName(String name) {
+        if (!inTransaction) {
+            this.name = name;
+        }
+        else
+        {
+            System.out.println("Contractor is currently in transaction. Name not changed.");
+        }
+    }
+
+    public enum  ContractorType
     {
-        this.name = name;
+        PROVIDER,
+        CUSTOMER,
+    }
+    static int id = 0;
+
+    private String name;
+    private String industry;
+    private ContractorType contractorType; //0-buyer, 1-provider
+    private int contractorId;
+    private int inStoreAmount;
+
+    private boolean inTransaction = false;
+
+    public Contractor()
+    {
+
+    }
+
+    public Contractor(String name, String industry, ContractorType contractorType)
+    {
+        this.setName(name);
+        this.setIndustry(industry);
+        this.setContractorType(contractorType);
+        setContractorId(id++);
+    }
+
+    public void setInTransaction(boolean inTransaction)
+    {
+        this.inTransaction = inTransaction;
+    }
+
+    public void makeOffer(String msg)
+    {
+        System.out.println(getName() + ": " + msg);
+    }
+
+    public void makeOffer(String msg, int numRepetition)
+    {
+        for (int i=0; i< numRepetition; i++)
+        {
+            System.out.println(getName() + ": " + msg);
+        }
+    }
+    public void makeOffer(int numRepetition)
+    {
+        for (int i = 0; i < numRepetition; i++)
+        {
+            makeOffer();
+        }
+    }
+
+    public abstract void makeOffer();
+ //   {
+ //       System.out.println("I'm ready for transaction.");
+ //   }
+
+    public String getIndustry() {
+        return industry;
+    }
+
+    public void setIndustry(String industry) {
         this.industry = industry;
+    }
+
+    public ContractorType getContractorType() {
+        return contractorType;
+    }
+
+    public void setContractorType(ContractorType contractorType) {
         this.contractorType = contractorType;
-        contractorId= id++;
     }
-    //declaration of method to subtract goods from provider stock
-    public void provideGoods(int amount)
-    {
-        inStoreAmount -= amount;
+
+    public int getContractorId() {
+        return contractorId;
     }
-    //declaration of method to add goods to buyer stock
-    public void receiveGoods(int amount)
-    {
-        inStoreAmount += amount;
+
+    public void setContractorId(int contractorId) {
+        this.contractorId = contractorId;
+    }
+
+    public int getInStoreAmount() {
+        return inStoreAmount;
+    }
+
+    public void setInStoreAmount(int inStoreAmount) {
+        this.inStoreAmount = inStoreAmount;
     }
 }
