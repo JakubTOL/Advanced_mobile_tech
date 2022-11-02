@@ -4,6 +4,7 @@ public class Transaction
 {
     Contractor contractorA;// seller
     Contractor contractorB;// buyer
+    public int orderQuantity;
     public static final int UNCONFIRMED = -1;
     public static final int ON_NEGOTIATION = 0;
 
@@ -82,16 +83,9 @@ public class Transaction
     }
 
     //TODO2: set quantity of goods in transaction
-    public void transactionQuantity(int amount)
+    public void setQuantity(int amount)
     {
-        if (amount>=contractorA.getInStoreAmount())
-        {
-           System.out.println("We can make a deal.");
-        }
-        else
-        {
-            System.out.println("Not enough good to complete transaction.");
-        }
+        orderQuantity = amount;
     }
 
 }
