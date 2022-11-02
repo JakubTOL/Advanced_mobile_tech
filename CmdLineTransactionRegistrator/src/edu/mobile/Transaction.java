@@ -15,7 +15,6 @@ public class Transaction
         COMPLETED,
     }
     Status status;// -1 - on creation, 0 - negotiation, 1 - in progress, 2 - completed
-    long order_quantity;
 
     //TODO_done1: write constructor with 2 params (contractors)
     public Transaction(Contractor provider, Contractor customer)
@@ -83,5 +82,12 @@ public class Transaction
     }
 
     //TODO: set quantity of goods in transaction
+    public void transactionQuantity()
+    {
+        if (contractorA.getInStoreAmount() >= ;)
+        {
+
+        }
+    }
 
 }
