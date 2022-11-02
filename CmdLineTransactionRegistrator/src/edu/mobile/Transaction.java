@@ -81,12 +81,16 @@ public class Transaction
         //System.out.println(status);
     }
 
-    //TODO: set quantity of goods in transaction
-    public void transactionQuantity()
+    //TODO2: set quantity of goods in transaction
+    public void transactionQuantity(int amount)
     {
-        if (contractorA.getInStoreAmount() >= ;)
+        if (amount>=contractorA.getInStoreAmount())
         {
-
+           System.out.println("We can make a deal.");
+        }
+        else
+        {
+            System.out.println("Not enough good to complete transaction.");
         }
     }
 

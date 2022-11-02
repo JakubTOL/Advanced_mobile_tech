@@ -8,7 +8,10 @@ public class Customer extends Contractor
     }
 
     //declaration of method to add goods to buyer stock
-    public void receiveGoods(int amount) {setInStoreAmount(getInStoreAmount() + amount);}
+    public void receiveGoods(int amount)
+    {
+        setInStoreAmount(getInStoreAmount() + amount);
+    }
 
     public void makeOffer()
     {

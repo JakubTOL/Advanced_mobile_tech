@@ -8,7 +8,10 @@ public class Provider extends Contractor
     }
 
     //declaration of method to subtract goods from provider stock
-    public void provideGoods(int amount) {setInStoreAmount(getInStoreAmount() - amount);}
+    public void provideGoods(int amount)
+    {
+        setInStoreAmount(getInStoreAmount() - amount);
+    }
 
     public void makeOffer()
     {
