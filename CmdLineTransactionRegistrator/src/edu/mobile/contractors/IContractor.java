@@ -1,6 +1,6 @@
-package edu.mobile;
+package edu.mobile.contractors;
 
-public interface IProvider
+public interface IContractor
 {
     String getName();
 
@@ -13,8 +13,4 @@ public interface IProvider
     void dispatch();
 
     void makeOffer();
-
-    void dispatchGoods(int amount);
-
-    boolean hasEnoughGoods(int amount);
 }
