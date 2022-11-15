@@ -89,4 +89,8 @@ public class Transaction
         orderQuantity = amount;
     }
 
+    public void superUseful()
+    {
+        System.out.println("Do nothing.");
+    }
 }
