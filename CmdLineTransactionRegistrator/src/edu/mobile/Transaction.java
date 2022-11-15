@@ -74,6 +74,7 @@ public class Transaction
         //set status to 1 and print to cmd
         status = Status.IN_PROGRESS;
         //System.out.println(status);
+
     }
     public void completeTransaction()
     {

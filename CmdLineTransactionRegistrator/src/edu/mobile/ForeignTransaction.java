@@ -2,6 +2,10 @@ package edu.mobile;
 
 public class ForeignTransaction extends Transaction
 {
+    Status status = Status.ON_NEGOTIATION;
+    private int amountOfGoods;
+    Shipper shipper;
+
     //TODO2: make this class extended Transaction
     public ForeignTransaction(Contractor provider, Contractor customer, Status status)
     {
@@ -20,4 +24,5 @@ public class ForeignTransaction extends Transaction
             System.out.println("Can't insure transaction.");
         }
     }
+
 }
