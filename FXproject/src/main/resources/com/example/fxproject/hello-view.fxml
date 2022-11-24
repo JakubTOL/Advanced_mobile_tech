@@ -2,15 +2,18 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
 
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+<?import javafx.scene.control.TextField?>
+<GridPane alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.example.fxproject.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
     <Label fx:id="welcomeText"/>
-    <Button text="Click here to display text!" onAction="#onHelloButtonClick"/>
-</VBox>
+    <Button fx:id="helloButton" text="Say hello!" GridPane.rowIndex="1" GridPane.columnIndex="0" onAction="#onButtonClick"/>
+    <Button fx:id="byeButton" text="Say bye!" GridPane.rowIndex="1" GridPane.columnIndex="1" onAction="#onButtonClick"/>
+    <TextField fx:id="nameField" GridPane.rowIndex="0" GridPane.columnIndex="0" onAction="#handleKeyReleased"/>
+</GridPane>

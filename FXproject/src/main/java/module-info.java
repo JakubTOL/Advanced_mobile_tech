@@ -1,4 +1,5 @@
-module com.example.fxproject {
+module com.example.fxproject
+{
     requires javafx.controls;
     requires javafx.fxml;
 
