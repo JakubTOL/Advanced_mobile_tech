@@ -1,4 +1,4 @@
-# AM_Application
-Application to convert json format texts
+# AdvancedMobileTech_App
+This application displays json text 
 
 ![](Image/mainWindow.png)

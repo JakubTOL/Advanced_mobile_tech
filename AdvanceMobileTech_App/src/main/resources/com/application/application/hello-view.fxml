@@ -10,7 +10,7 @@
     <children>
         <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="400.0">
             <children>
-                <TextArea fx:id="formatText" focusTraversable="false" maxHeight="280.0" maxWidth="380.0" minHeight="280.0" minWidth="380.0" onKeyReleased="#handleKeyReleased" prefHeight="280.0" prefWidth="380.0" text="Put json text in one line">
+                <TextArea fx:id="formatText" focusTraversable="false" maxHeight="280.0" maxWidth="380.0" minHeight="280.0" minWidth="380.0" onKeyReleased="#handleKeyReleased" prefHeight="280.0" prefWidth="380.0" text="Type json content as single line">
                     <font>
                         <Font size="13.0" />
                     </font>
@@ -28,7 +28,7 @@
                         <Insets left="345.0" />
                     </VBox.margin>
                 </Button>
-            <Button fx:id="ReadButton" mnemonicParsing="false" onAction="#ReadButtonClicked" prefHeight="26.0" prefWidth="65.0" text="Read File">
+            <Button fx:id="ReadButton" mnemonicParsing="false" onAction="#ReadButtonClicked" prefHeight="26.0" prefWidth="65.0" text="Read">
                <VBox.margin>
                   <Insets bottom="10.0" left="345.0" right="10.0" top="10.0" />
                </VBox.margin>

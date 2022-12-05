@@ -36,7 +36,7 @@ public class HelloController implements Initializable {
     private ScrollPane formattedLabel;
 
     Text setTextColorScrollPane(){
-        Text text = new Text("Prettier json");
+        Text text = new Text("Formatted json file");
         text.setFill(Color.gray(0.6));
         return text;
     }

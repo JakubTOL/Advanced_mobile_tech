@@ -16,7 +16,7 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),800, 600);
         stage.setTitle("AdvanceMobileTech_App!");
-        stage.getIcons().add(new Image("/iconjson1.jpg"));
+        stage.getIcons().add(new Image("/icon.jpg"));
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
