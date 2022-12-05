@@ -5,13 +5,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -42,7 +42,7 @@ public class HelloController implements Initializable {
     }
 
     String setTextColorTextArea(){
-        String text = "Put json text in one line";
+        String text = "Type json content as single line here";
         return text;
     }
 
